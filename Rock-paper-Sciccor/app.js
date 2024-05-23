@@ -4,6 +4,9 @@ let compScore = 0;
 let choices = document.querySelectorAll(".choice");
 let msg = document.querySelector("#msg");
 
+let userScoreField = document.querySelector("#user-score");
+let compScoreField = document.querySelector("#comp-score");
+
 const getCompChoice = () => {
     const options = ["rock", "paper", "scissor"];
     const randInd = Math.floor(Math.random() * 3);
@@ -11,6 +14,21 @@ const getCompChoice = () => {
     //console.log(`Computer chooses ${options[randInd]}`);
     return options[randInd];
 };
+
+const showWinner = (userWin, userChoice, compChoice) => {
+    if (userWin) {
+        userscore++;
+        userScoreField.innerText = userscore;
+        msg.innerText = `You Win !! ${userChoice} beats ${compChoice}`;
+        msg.style.backgroundColor = "Green";
+    } else {
+        compScore++;
+        compScoreField.innerText = compScore;
+        msg.innerText = `You Lose! ${compChoice} beats ${userChoice}`;
+        msg.style.backgroundColor = "red";
+    }
+
+}
 
 const gameDraw = () => {
     msg.innerText = "Game was Draw,Play Again";
@@ -32,8 +50,10 @@ const playGame = (userChoice) => {
         } else {
             userWin = compChoice === "rock" ? false : true;
         }
+        showWinner(userWin, userChoice, compChoice);
     }
 };
+
 
 choices.forEach((choice) => {
     choice.addEventListener("click", () => {
