@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CACOde</title>
+</head>
+<body>
+    <h1>CACOde</h1>
+    <button>Stop</button>
+</body>
+<script>
+    const sayName = function(){
+        console.log('UserName');
+        
+    }
+    // setTimeout(sayName,3000)
+
+    const changeText = function(){
+    document.querySelector('h1').innerHTML = 'Best JS Series'
+    }
+    const chsngeIt = setTimeout(changeText,3000)
+
+    document.querySelector('button')
+    .addEventListener('click',function(){
+        clearTimeout(chsngeIt)
+        console.log('stopped');
+        
+    })
+</script>
+</html>
