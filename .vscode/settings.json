@@ -1,0 +1,6 @@
+{
+    "inlineChat.holdToSpeech": false,
+    "inlineChat.lineNaturalLanguageHint": false,
+    "accessibility.verbosity.panelChat": false,
+    "accessibility.verbosity.inlineChat": false
+}
