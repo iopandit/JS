@@ -80,7 +80,7 @@ async function consumePromiseFive() {
 consumePromiseFive()
 
 
-/ async function getAllUsers(){
+// async function getAllUsers(){
   //     try {
   //         const response = await fetch('https://jsonplaceholder.typicode.com/users')
   
